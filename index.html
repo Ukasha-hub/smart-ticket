@@ -16,11 +16,17 @@
 
         #ticket-info{
           
-          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-rows: 40% 10% 40%;
         }
         
         #divider{
-          transform: rotate(90deg)
+          display: none;
+        }
+
+        #seatbook{
+          grid-template-rows: 50% 50%;
+          gap: 40px;
+
         }
 
        }  
@@ -70,7 +76,7 @@
         <h1 class="mb-5 text-7xl font-bold">P Paribahan</h1>
         <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
         <form action="#ticket" id="trans-button" onclick="transition()">
-          <input  type="submit"  class="btn btn-primary"></input>
+          <input  type="submit"  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"></input>
         </form>
         
       </div>
@@ -120,7 +126,7 @@
     </div>
    <!--Ticket info------------------------------------------------>
     <div class="" id="ticket">
-      <div class="card min-w-screen    bg-white text-primary-content mx-20">
+      <div class="card min-w-screen    bg-white text-primary-content lg:m-10">
         <div class="card-body grid lg:grid-flow-row grid-flow-col  py-0 " id="ticket-info" style="grid-template-columns: 4fr 1fr 1fr;">
           <div class="px-10">
             <div class="flex flex-row justify-between ">
@@ -132,7 +138,7 @@
                 </div>
               </div>
               <div>
-                <button class="btn btn-primary" id="left">40</button>
+                <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="left">40</button>
               </div>
             </div>
             <div class="bg-gray-200 rounded-md p-5">
@@ -145,9 +151,9 @@
                 <div><h1>9:00 PM</h1></div>
               </div>
               <div class="flex flex-row justify-between ">
-                <div><button class="btn btn-primary">Primary</button></div>
-                <div><button class="btn btn-primary">Primary</button></div>
-                <div><button class="btn btn-primary">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
               </div>
             </div>
           </div>
@@ -164,11 +170,11 @@
         
       </div>
     </div>
-
+<!--seat boooooking-->
     <div class="mt-20">
-      <div class="card min-w-screen lg:min-w-0.5   bg-white text-primary-content ">
-        <div class="card-body grid grid-flow-row  py-0 " style="grid-template-columns: 4fr 2fr ;">
-          <div class="px-10 border-r-2 border-dashed">
+      <div class="card min-w-screen lg:mx-5   bg-white text-primary-content " >
+        <div class="card-body grid grid-flow-col lg:grid-flow-row  py-0 " id="seatbook" style="grid-template-columns: 4fr 2fr ;">
+          <div class="px-10 lg:border-r-2 lg:border-dashed">
             <div >
               <h1>Select your seat</h1>
             </div>
@@ -185,120 +191,127 @@
              
               
             </div>
-            <div class=" ">
+            <div class="px-0 ">
+              <div id="limit-alert" class=" bg-red-400 text-lg flex justify-center">
+
+              </div>
               
-              <div class="flex flex-row justify-end ">
-                <div><button class="btn btn-primary">Primary</button></div>
+              <div class="flex flex-row justify-evenly gap-10 lg:gap-0 mt-10" >
+                <div><button class="hidden btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="hidden btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="hidden btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="hidden btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><i class="fa-solid fa-user fa-2xl"></i></button></div>
               </div>
 
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">A</div>
-                  <div ><button .="selectSeat()"   class="btn btn-primary seat">A1</button></div>
-                  <div><button .   class="btn btn-primary seat">A2</button></div>
+                  <div ><button    class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  seat">A1</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">A2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button .   class="btn btn-primary seat">A3</button></div>
-                  <div><button .   class="btn btn-primary seat">A4</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">A3</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">A4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">B</div>
-                  <div><button .   class="btn btn-primary seat">Primary</button></div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">B1</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">B2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button .   class="btn btn-primary seat">Primary</button></div>
-                  <div><button .   class="btn btn-primary seat">Primary</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">B3</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">B4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">C</div>
-                  <div><button .    class="btn btn-primary seat">Primary</button></div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
+                  <div><button .    class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">C1</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">C2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button .   class="btn btn-primary seat">Primary</button></div>
-                  <div><button .   class="btn btn-primary seat">Primary</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">C3</button></div>
+                  <div><button .   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">C4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">D</div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">D1</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">D2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">D3</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">D4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">E</div>
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
-                  <div><button . class="seat" class="btn btn-primary">Primary</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">E1</button></div>
+                  <div><button  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">E2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button .  class="btn btn-primary seat">Primary</button></div>
-                  <div><button . class ="btn btn-primary seat">Primary</button></div>
+                  <div><button .  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">E3</button></div>
+                  <div><button . class ="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">E4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">F</div>
-                  <div><button  class="btn btn-primary seat">Primary</button></div>
-                  <div><button   class="btn btn-primary seat">Primary</button></div>
+                  <div><button  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">F1</button></div>
+                  <div><button   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">F2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button   class="btn btn-primary seat">Primary</button></div>
-                  <div><button   class="btn btn-primary seat">Primary</button></div>
+                  <div><button   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">F3</button></div>
+                  <div><button   class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">F4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">G</div>
-                  <div><button . id="G1" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="G2" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="G1" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">G1</button></div>
+                  <div><button . id="G2" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">G2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button . id="G3" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="G4" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="G3" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">G3</button></div>
+                  <div><button . id="G4" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">G4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">H</div>
-                  <div><button . id="H1" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="H2" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="H1" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">H1</button></div>
+                  <div><button . id="H2" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">H2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button . id="H3" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="H4" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="H3" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">H3</button></div>
+                  <div><button . id="H4" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">H4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">I</div>
-                  <div><button . id="I1" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="I2" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="I1" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  seat">I1</button></div>
+                  <div><button . id="I2" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">I2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button . id="I3" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="I4" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="I3" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">I3</button></div>
+                  <div><button . id="I4" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">I4</button></div>
                 </div>
               </div>
-              <div class="flex flex-row justify-around">
+              <div class="flex flex-row justify-evenly gap-5">
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 1fr 2fr 2fr;">
                   <div class="text-2xl">J</div>
-                  <div><button . id="J1" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="J2" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="J1" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">J1</button></div>
+                  <div><button . id="J2" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">J2</button></div>
                 </div>
                 <div class="grid grid-flow-row gap-5" style="grid-template-columns: 2fr 2fr;">
-                  <div><button . id="J3" class="btn btn-primary">Primary</button></div>
-                  <div><button . id="J4" class="btn btn-primary">Primary</button></div>
+                  <div><button . id="J3" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">J3</button></div>
+                  <div><button . id="J4" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg seat">J4</button></div>
                 </div>
               </div>
 
@@ -325,11 +338,12 @@
               </div>  
               <div class="flex flex-row justify-center">
                 <div>
-                  <input type="text" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
+                  <input id="code" type="text" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
                 </div>
                 <div>
-                  <button class="btn btn-primary">Primary</button>
+                  <button id="promo-button" disabled class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button>
                 </div>
+                <div id="promo-result" class="hidden bg-green-300 text-white text-3xl font-extrabold">Discount Activated</div>
               </div>
               <div class="flex flex-row justify-between ">
                 <div><h1>Grand Price</h1></div>
@@ -338,12 +352,12 @@
               <div>
                 <h1>Passenger Name</h1>
                 <input type="text" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
-                <h1>Passenger Name</h1>
-                <input type="text" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
+                <h1>Phone Number</h1>
+                <input id="phone" type="tel" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
                 <h1>Passenger Name</h1>
                 <input type="text" placeholder="Type here" class="input input-bordered input-md w-[100%] max-w-sx" />
                 <div class="flex justify-center">
-                  <div><button disabled class="btn btn-wide">Wide</button></div>
+                  <div><button id="submit" disabled class="btn btn-wide">Wide</button></div>
                 </div>
                 <div class="flex flex-row justify-center gap-5">
                   <div><a style="" href=""></a>Terms & Conditions</div>
