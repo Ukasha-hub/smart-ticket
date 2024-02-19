@@ -6,28 +6,37 @@ const booked= document.getElementById('booked');
 const left= document.getElementById('left');
 const item= document.getElementById('seatList');
 
+const promo = document.getElementById('promo-button');
+
 const submit= document.getElementById('submit');
 const phone= document.getElementById('phone');
 
+phone.addEventListener('keyup', submitValidity);
+
+const total= document.getElementById('total');
+const grand = document.getElementById('grand');
+
+let takaTotal=0;
+let grandTotal=0;
+let discount=0;
+
+
+
 for(const i of buttons) {
+   
+   
+
     i.addEventListener('click', function() {
         
-        if(phone.value!=='' && chooseCount>=0){
-            console.log('1')
-            submit.removeAttribute('disabled');
-        } 
-
-        else{
-            submit.setAttribute('disabled', '');
-            console.log('2')
-        }
+        
         
         if(i.style.backgroundColor!=='green' ){
 
-            console.log('3')
+           
             
             if(chooseCount>=4){
-                limitFour();
+                alert('You only can select max 4 seats');
+                return;
             } 
             
             else if(chooseCount>=3){
@@ -41,11 +50,15 @@ for(const i of buttons) {
         
         else{
             
-            console.log('4')
-                seatUnchoosing(i);
+            
+            
+            promo.setAttribute('disabled', '');
+            seatUnchoosing(i);
+            
         }
             
-          
+        submitValidity();
+         
 
     });
 
@@ -58,35 +71,30 @@ for(const i of buttons) {
 
 
 
-function limitFour(){
 
-   
-    alert('You only can select max 4 seats');
-
-    for(const j of buttons){
-        if(j.style.backgroundColor!=='green'){
-            j.setAttribute('disabled');
-            
-        }
-
-        else{
-            j.removeAttribute('disabled');
-            
-        }
-
-       
+function submitValidity(){ 
+    if(chooseCount>=1 && phone.value){
+        submit.removeAttribute('disabled');
+        submit.addEventListener('click', function(){
+            window.location.href='success.html';
+        });
+    }
     
-        
-        
-    };
 
-    
+    else{
+        submit.setAttribute('disabled', '');
+    }
     return
 }
 
 
+
+
+
+
+
 function promoActivator(){
-    const promo = document.getElementById('promo-button');
+  
     promo.removeAttribute('disabled');
     const code = document.getElementById('code');
     const result = document.getElementById('promo-result');
@@ -96,6 +104,35 @@ function promoActivator(){
             promo.classList.add('hidden')
             code.classList.add('hidden')
             result.classList.remove('hidden')
+            if(code.value==='NEW15'){
+                discount=grandTotal*(15/100);
+                grandTotal-=discount;
+                discountAfter1=document.createElement('div');
+                discountAfter2=document.createElement('div');
+                discountAfter1.innerText='discount';
+                discountAfter2.innerText='BDT '+discount;
+                result.appendChild(discountAfter1);
+                result.appendChild(discountAfter2);
+                grand.innerText=grandTotal;
+                for(const k of buttons) {
+                    k.setAttribute('disabled', '');
+                }
+            }
+            else if(code.value==='Couple20'){
+                discount=grandTotal*(20/100);
+                grandTotal-=discount;
+                discountAfter1=document.createElement('div');
+                discountAfter2=document.createElement('div');
+                discountAfter1.innerText='discount';
+                discountAfter2.innerText='BDT '+discount;
+                result.appendChild(discountAfter1);
+                result.appendChild(discountAfter2);
+                grand.innerText=grandTotal;
+                for(const k of buttons) {
+                    k.setAttribute('disabled', '');
+                }
+            }
+
         }
 
         else{
@@ -126,6 +163,10 @@ function seatChoosing(i){
         
         chooseCount+=1;
         seatLeft-=1;
+        takaTotal+=550;
+        grandTotal+=550;
+        total.innerText=takaTotal;
+        grand.innerText=grandTotal;
         booked.innerText=chooseCount;
         left.innerText= seatLeft;
         return ;
@@ -139,6 +180,10 @@ function seatUnchoosing(i){
             
         chooseCount-=1;
         seatLeft+=1;
+        takaTotal-=550;
+        grandTotal-=550;
+        total.innerText=takaTotal;
+        grand.innerText=grandTotal;
         booked.innerText=chooseCount;
         left.innerText= seatLeft;
         return;

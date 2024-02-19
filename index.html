@@ -16,7 +16,9 @@
 
         #ticket-info{
           
-          grid-template-rows: 40% 10% 40%;
+          grid-template-rows: 60% 10% 40%;
+          justify-items: center;
+          
         }
         
         #divider{
@@ -29,12 +31,16 @@
 
         }
 
+        .first-discount{
+          display: none;
+        }
+
        }  
 
         
     </style>
 </head>
-<body>
+<body class="text-black">
 
   <!--------NavBar-->
 
@@ -51,7 +57,7 @@
           <li><a>Search</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">daisyUI</a>
+      <a class="btn btn-ghost text-2xl font-extrabold ">P-PARIBAHAN</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -75,8 +81,8 @@
         <h1 class="mb-5 text-7xl font-bold">End-to-End Travel with</h1>
         <h1 class="mb-5 text-7xl font-bold">P Paribahan</h1>
         <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <form action="#ticket" id="trans-button" onclick="transition()">
-          <input  type="submit"  class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"></input>
+        <form action="#ticket" id="trans-button" >
+          <button  type="submit"  class="btn bg-green-500 border-none font-extrabold sm:btn-sm md:btn-md lg:btn-lg">Buy Tickets</button>
         </form>
         
       </div>
@@ -87,16 +93,17 @@
    <div class=" text-center py-10 ">
     <h1 class="font-bold text-4xl">Best Offer for you</h1>
 </div>
-  <section class="flex flex-col lg:flex-row justify-center gap-4 lg:gap-10 ">
+  <section class="flex flex-col lg:flex-row justify-center gap-4 lg:gap-10  mx-4">
     <div class="">
-      <div class="card min-w-screen lg:min-w-0.5   bg-primary text-primary-content">
-        <div class="card-body flex flex-row justify-between p-10 ">
-          <div class="p-10">
+      <div class="card min-w-screen lg:min-w-0.5  bg-primary text-primary-content ">
+        <div class="card-body grid grid-flow-col lg:grid-flow-row justify-between  py-0"  style="grid-template-columns: 4fr 1fr 1fr;">
+          <div class="pt-10">
             <h2 class="card-title">15% OFF</h2>
             <p>On your next purchase</p>
           </div>
-          <div class="p-10">
-            <h2 class="card-title">NEW 15%</h2>
+          <div class="py-0 first-discount"><img src="images/cupon-devider.png" alt=""></div>
+          <div class="p-5">
+            <h2 class="card-title">NEW15</h2>
             <p>Coupon code</p>
           </div>
          
@@ -104,16 +111,18 @@
       </div>
     </div>
     <div>
-      <div class="card min-w-screen bg-primary text-primary-content">
-        <div class="card-body flex flex-row justify-between p-10 ">
-          <div class="p-10">
+      <div class="card min-w-screen lg:min-w-0.5  bg-primary text-primary-content ">
+        <div class="card-body grid grid-flow-col lg:grid-flow-row justify-between  py-0"  style="grid-template-columns: 4fr 1fr 1fr;">
+          <div class="pt-10">
             <h2 class="card-title">15% OFF</h2>
             <p>On your next purchase</p>
           </div>
-          <div class="p-10">
-            <h2 class="card-title">NEW 15%</h2>
+          <div class="py-0 first-discount"><img src="images/cupon-devider.png" alt=""></div>
+          <div class="p-5">
+            <h2 class="card-title">Couple20</h2>
             <p>Coupon code</p>
           </div>
+         
         </div>
       </div>
     </div>
@@ -128,37 +137,37 @@
     <div class="" id="ticket">
       <div class="card min-w-screen    bg-white text-primary-content lg:m-10">
         <div class="card-body grid lg:grid-flow-row grid-flow-col  py-0 " id="ticket-info" style="grid-template-columns: 4fr 1fr 1fr;">
-          <div class="px-10">
-            <div class="flex flex-row justify-between ">
-              <div class="flex flex-row gap-2">
+          <div class="px-10 ">
+            <div class="flex flex-row justify-between pt-10">
+              <div class="flex lg:flex-row flex-col gap-2 ">
                 <div><img src="images/bus-logo.png" alt=""></div>
-                <div >
+                <div class="">
                   <h1>Greenline Paribahon</h1>
                   <p>Couch-009-WEB | AC_Business</p>
                 </div>
               </div>
               <div>
-                <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="left">40</button>
+                <button class="btn  sm:btn-sm md:btn-md lg:btn-lg" ><i class="fa-solid fa-chair fa-lg"></i><span id="left">40</span>seats left</button>
               </div>
             </div>
-            <div class="bg-gray-200 rounded-md p-5">
-              <div class="flex flex-row justify-between border-b-2 border-dashed border-gray-500">
-                <div><h1>Route</h1></div>
+            <div class="bg-gray-200 rounded-md mt-10 p-5">
+              <div class="flex flex-row justify-between border-b-2 border-dashed border-gray-500 p-4">
+                <div class=""><h1>Route</h1></div>
                 <div><h1>Dhaka-Sylhet</h1></div>
               </div>
-              <div class="flex flex-row justify-between border-b-2 border-dashed border-gray-500">
+              <div class="flex flex-row justify-between border-b-2 border-dashed border-gray-500 p-4">
                 <div><h1>Departure Time</h1></div>
                 <div><h1>9:00 PM</h1></div>
               </div>
-              <div class="flex flex-row justify-between ">
-                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
-                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
-                <div><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button></div>
+              <div class="flex flex-row justify-between p-4">
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md ">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md ">Primary</button></div>
+                <div><button class="btn btn-xs sm:btn-sm md:btn-md ">Primary</button></div>
               </div>
             </div>
           </div>
           <div class="h-50" id="divider" ><img   src="images/info-devider.png" alt=""></div>
-          <div class="flex flex-col">
+          <div class="flex flex-col pt-20">
             <div><img src="images/fare.png" alt=""></div>
             <div>500 Taka</div>
             <div>Per seat</div>
@@ -190,8 +199,8 @@
               
              
               
-            </div>
-            <div class="px-0 ">
+            </div  >
+            <div  class=" px-0 ">
               <div id="limit-alert" class=" bg-red-400 text-lg flex justify-center">
 
               </div>
@@ -316,6 +325,7 @@
               </div>
 
             </div>
+            <div id="success" class=""></div>
           </div>
           
           <div class="flex flex-col">
@@ -334,7 +344,7 @@
               <div  id="seatList"></div>
               <div class="flex flex-row justify-between border-t-2 border-gray-500">
                 <div><h1>Total Price</h1></div>
-                <div >BDT<span>0</span></div>
+                <div >BDT<span id="total">0</span></div>
               </div>  
               <div class="flex flex-row justify-center">
                 <div>
@@ -343,11 +353,11 @@
                 <div>
                   <button id="promo-button" disabled class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Primary</button>
                 </div>
-                <div id="promo-result" class="hidden bg-green-300 text-white text-3xl font-extrabold">Discount Activated</div>
+                <div id="promo-result" class="hidden flex-col"></div>
               </div>
               <div class="flex flex-row justify-between ">
                 <div><h1>Grand Price</h1></div>
-                <div >BDT<span>0</span></div>
+                <div >BDT<span id="grand">0</span></div>
               </div> 
               <div>
                 <h1>Passenger Name</h1>
@@ -360,7 +370,7 @@
                   <div><button id="submit" disabled class="btn btn-wide">Wide</button></div>
                 </div>
                 <div class="flex flex-row justify-center gap-5">
-                  <div><a style="" href=""></a>Terms & Conditions</div>
+                  <div><a  href=""></a>Terms & Conditions</div>
                   <div><a href=""></a>Cancelation Policy</div>
                 </div>
               </div>
