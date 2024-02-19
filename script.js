@@ -73,7 +73,7 @@ for(const i of buttons) {
 
 
 function submitValidity(){ 
-    if(chooseCount>=1 && phone.value){
+    if(chooseCount>=1 && parseInt(phone.value)){
         submit.removeAttribute('disabled');
         submit.addEventListener('click', function(){
             window.location.href='success.html';
