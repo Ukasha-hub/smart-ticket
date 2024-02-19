@@ -100,7 +100,7 @@ function promoActivator(){
     const result = document.getElementById('promo-result');
 
     promo.addEventListener('click', function(){
-        if(code.value==='NEW15' || code.value==='Couple20'){
+        if(code.value==='NEW15' || code.value==='Couple20' || code.value==='Couple 20'){
             promo.classList.add('hidden')
             code.classList.add('hidden')
             result.classList.remove('hidden')
@@ -119,7 +119,7 @@ function promoActivator(){
                     k.setAttribute('disabled', '');
                 }
             }
-            else if(code.value==='Couple20'){
+            else if(code.value==='Couple20' || code.value==='Couple 20'){
                 discount=grandTotal*(20/100);
                 grandTotal-=discount;
                 discountAfter1=document.createElement('div');
