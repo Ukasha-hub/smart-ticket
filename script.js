@@ -109,10 +109,11 @@ function promoActivator(){
                 grandTotal-=discount;
                 discountAfter1=document.createElement('div');
                 discountAfter2=document.createElement('div');
-                discountAfter1.innerText='discount';
+                discountAfter1.innerText='Discount =';
                 discountAfter2.innerText='BDT '+discount;
                 result.appendChild(discountAfter1);
                 result.appendChild(discountAfter2);
+                result.classList.add('flex', 'flex-row', 'justify-around', 'content-around');
                 grand.innerText=grandTotal;
                 for(const k of buttons) {
                     k.setAttribute('disabled', '');
@@ -123,10 +124,11 @@ function promoActivator(){
                 grandTotal-=discount;
                 discountAfter1=document.createElement('div');
                 discountAfter2=document.createElement('div');
-                discountAfter1.innerText='discount';
+                discountAfter1.innerText='Discount =';
                 discountAfter2.innerText='BDT '+discount;
                 result.appendChild(discountAfter1);
                 result.appendChild(discountAfter2);
+                result.classList.add('flex', 'flex-row', 'justify-around', 'content-around');
                 grand.innerText=grandTotal;
                 for(const k of buttons) {
                     k.setAttribute('disabled', '');
